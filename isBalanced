@@ -1,0 +1,30 @@
+/*takes a string such as {{(([[]]))}}
+  and uses a stack to see if the string is properly balanced
+  with matching characters
+  */
+
+public static boolean isBalanced(String input){
+    if(input.length() == 0){
+       return true;
+    } else{
+       Stack st = new Stack();
+       
+       for(int i = 0; i < input.length(); i++){
+           char check = input.charAt(i);
+           
+           if(check == '{' || check == '[' || check =='(') st.push(check);
+           else if(!st.empty()){
+               char test = (char)st.pop();
+               if((check == '}' && test != '{') ||
+                 (check == ']' && test != '[') ||
+                 (check == ')' && test != '(')) {
+                  return false;
+               }
+           } else{
+               return false;
+           }
+       }
+       
+       return st.empty();
+    }
+}
