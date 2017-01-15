@@ -1,0 +1,17 @@
+/* takes two input strings and calculates the number of characters to
+    remove from them both to make a string with the same character 
+    frequency (anagram) 
+    
+    O(n^2) due to contains method */
+
+public static int deletionsNeeded(String first, String second) {
+    StringBuilder sb1 = new StringBuilder();
+    for(int i = 0; i < first.length(); i++){
+        CharSequence cs = String.valueOf(first.charAt(i));
+        if(second.contains(cs)){
+            sb1.append(cs);
+            second = second.replaceFirst(String.valueOf(first.charAt(i)), " ");
+        }
+    }
+    return (first.length() - sb1.length()) + (second.length() - sb1.length());
+}
