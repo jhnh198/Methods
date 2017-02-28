@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Test Page</title>
+	<script src="rectangles.js"></script>
+  </head>
+  <body>
+
+    <div class="menu">
+      <!-- Menu icon -->
+      <div class="placeholder1">
+      </div>
+	
+			<ul style="list-style-type:none">
+				Rectangle 1: <br>
+				<li>x      <input type="text" id ="x1" name="x1" value="20"></li>
+				<li>y      <input type="text" id ="y1" name="y1" value="30"></li>
+				<li>width  <input type="text" id ="width1" name="width1" value="40"></li>
+				<li>height <input type="text" id ="height1" name="height1" value="11"></li>
+			</ul>
+			
+			<ul style="list-style-type:none">
+				Rectangle 2: <br>
+				<li>x      <input type="text" id ="x2" name="x2" value="50"></li>
+				<li>y      <input type="text" id ="y2" name="y2" value="22"></li>
+				<li>width  <input type="text" id ="width2" name="width2" value="26"></li>
+				<li>height <input type="text" id ="height2" name="height2" value="36"></li>
+				
+				<br><br>
+				<!--<input type="submit" value="Submit"> -->
+				<button type="button" onclick="solveIntersect()"> Solve Intersect </button>
+				<br><br>
+				Result: <output id="result"name="result"></output>
+			</ul>
+    </div>
+  </body>
+</html>
